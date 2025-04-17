@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Your Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Make sure this path is correct -->
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,16 +22,20 @@
         <div class="container header-container">
             <a href="index.html" class="logo">CineSuggest</a>
             <div class="search-container">
+                 <!-- Ensure ID matches JS -->
                  <input type="search" id="searchInput" placeholder="Search for any movie..." class="search-bar">
             </div>
-            <div class="header-actions"></div>
+            <div class="header-actions">
+                <!-- Future elements can go here -->
+            </div>
         </div>
     </header>
 
     <!-- HERO CAROUSEL -->
     <div class="swiper hero-swiper">
+        <!-- Ensure ID matches JS -->
         <div class="swiper-wrapper" id="heroCarouselWrapper">
-            <!-- Placeholder Slide -->
+            <!-- Placeholder Slide (will be replaced by JS) -->
              <div class="swiper-slide hero-slide" style="background-color: #222;">
                  <div class="hero-overlay"></div>
                  <div class="container hero-content">
@@ -40,6 +44,7 @@
                  </div>
              </div>
         </div>
+        <!-- Swiper Controls -->
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
@@ -50,6 +55,7 @@
         <!-- Mood Selection -->
         <section class="mood-selector-section">
              <h2>Find Movies by Mood</h2>
+             <!-- Ensure ID matches JS, and option values match moodMap keys -->
              <select id="moodDropdown" class="mood-dropdown">
                 <option value="">-- Select a Mood --</option>
                 <option value="happy">Uplifting / Happy</option>
@@ -61,16 +67,20 @@
              </select>
         </section>
 
-         <!-- Mood Results -->
+         <!-- Mood Results (Initially Hidden) -->
+        <!-- Ensure ID matches JS -->
         <section id="moodSection" class="movie-section" style="display: none;">
+            <!-- Ensure IDs match JS -->
             <h2 id="moodResultsTitle">Mood Suggestions</h2>
             <div id="moodGrid" class="movie-grid"></div>
              <p id="moodLoadingIndicator" class="loading-indicator" style="display: none;">Finding movies...</p>
              <p id="moodErrorIndicator" class="error-indicator" style="display: none;"></p>
         </section>
 
-        <!-- Search Results -->
+        <!-- Search Results (Initially Hidden) -->
+        <!-- Ensure ID matches JS -->
         <section id="searchResultsSection" class="movie-section" style="display: none;">
+            <!-- Ensure IDs match JS -->
             <h2 id="searchResultsTitle">Search Results</h2>
             <div id="searchResultsGrid" class="movie-grid"></div>
              <p id="searchLoadingIndicator" class="loading-indicator" style="display: none;">Searching...</p>
@@ -78,16 +88,20 @@
         </section>
 
         <!-- Top Trending -->
+        <!-- Ensure ID matches JS -->
         <section id="trendingSection" class="movie-section">
             <h2>Top Trending</h2>
+            <!-- Ensure IDs match JS -->
             <div id="trendingGrid" class="movie-grid"></div>
              <p id="trendingLoadingIndicator" class="loading-indicator">Loading trending movies...</p>
              <p id="trendingErrorIndicator" class="error-indicator" style="display: none;"></p>
         </section>
 
         <!-- Popular Picks -->
+        <!-- Ensure ID matches JS -->
         <section id="popularSection" class="movie-section">
             <h2>Popular Picks</h2>
+            <!-- Ensure IDs match JS -->
             <div id="popularGrid" class="movie-grid"></div>
              <p id="popularLoadingIndicator" class="loading-indicator">Loading popular movies...</p>
               <p id="popularErrorIndicator" class="error-indicator" style="display: none;"></p>
@@ -97,29 +111,36 @@
 
     <footer class="site-footer">
         <div class="container footer-content">
-            <p>© 2023 CineSuggest. Movie data powered by OMDb API.</p>
+            <p>© 2024 CineSuggest. Movie data provided by OMDb API.</p> <!-- Updated Year -->
             <p class="contact-info">
-                WhatsApp: <a href="https://wa.me/919661301885" target="_blank">9661301885</a>
+                <!-- Added rel="noopener noreferrer" for security -->
+                WhatsApp: <a href="https://wa.me/919661301885" target="_blank" rel="noopener noreferrer">9661301885</a>
             </p>
         </div>
     </footer>
 
-    <!-- MOVIE DETAIL MODAL -->
+    <!-- MOVIE DETAIL MODAL (Initially Hidden) -->
+    <!-- Ensure ID matches JS -->
     <div id="movieDetailModal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
-            <button id="modalCloseBtn" class="modal-close-btn">×</button>
+            <!-- Ensure ID matches JS -->
+            <button id="modalCloseBtn" class="modal-close-btn" aria-label="Close modal">×</button> <!-- Added aria-label -->
             <div class="modal-body">
                 <div class="modal-poster">
+                    <!-- Ensure ID matches JS. Added explicit alt text. -->
                     <img id="modalPosterImg" src="" alt="Movie Poster">
                 </div>
                 <div class="modal-info">
+                    <!-- Ensure ID matches JS -->
                     <h2 id="modalTitle">Movie Title</h2>
                     <p class="modal-meta">
+                        <!-- Added SPANs with IDs for precise JS targeting -->
                         <span id="modalYear">Year</span> |
                         <span id="modalRated">Rated</span> |
                         <span id="modalRuntime">Runtime</span>
                     </p>
-                    <p class="modal-genre"><strong >Genre:</strong> <span id="modalGenreText">Genre</span></p>
+                    <!-- Added SPANs with IDs for precise JS targeting -->
+                    <p class="modal-genre"><strong>Genre:</strong> <span id="modalGenreText">Genre</span></p>
                     <p class="modal-plot"><strong>Plot:</strong> <span id="modalPlotText">Plot details...</span></p>
                     <p><strong>Director:</strong> <span id="modalDirector">Director</span></p>
                     <p><strong>Writer:</strong> <span id="modalWriter">Writer</span></p>
@@ -127,11 +148,12 @@
                     <p><strong>IMDb Rating:</strong> <span id="modalRating">Rating</span></p>
                     <p><strong>Box Office:</strong> <span id="modalBoxOffice">N/A</span></p>
 
-                    <!-- *** DOWNLOAD BUTTON *** -->
+                    <!-- Ensure ID matches JS -->
                     <button id="modalDownloadBtn" class="btn download-btn">Download</button>
 
+                    <!-- Ensure IDs match JS -->
                     <p id="modalLoading" style="display: none;">Loading details...</p>
-                    <p id="modalError" class="error-indicator" style="display: none;"></p>
+                    <p id="modalError" class="error-indicator" style="display: none;"></p> <!-- Added class for consistency -->
                 </div>
             </div>
         </div>
@@ -140,7 +162,7 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Your Custom JS -->
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Make sure this path is correct -->
 
 </body>
 </html>

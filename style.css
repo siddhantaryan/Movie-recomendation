@@ -5,52 +5,59 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth; /* Optional: Smooth scroll for anchor links */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #101010;
     color: #f1f1f1;
     line-height: 1.6;
     font-weight: 300;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 30px; /* Default padding */
 }
 
 img {
     max-width: 100%;
-    height: auto;
-    display: block;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    background-color: #333; /* Placeholder color */
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: inherit; /* Inherit text color */
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #E50914;
+    color: #E50914; /* Brand color on hover */
 }
 
 
-/* --- Header & Search (Centered) --- */
+/* --- Header & Search --- */
 .site-header {
     background-color: #181818;
     padding: 1rem 0;
     border-bottom: 1px solid #282828;
-    position: sticky;
+    position: sticky; /* Keep header at top */
     top: 0;
-    z-index: 100;
+    z-index: 100; /* Ensure header is above content */
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 1rem; /* Add gap for wrapping */
 }
 
 .logo {
@@ -58,22 +65,22 @@ a:hover {
     font-weight: 700;
     color: #E50914;
     letter-spacing: 1px;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 .search-container {
-    flex-grow: 1;
+    flex-grow: 1; /* Allow search to take available space */
     display: flex;
     justify-content: center;
-    padding: 0 2rem;
-    min-width: 200px;
+    padding: 0 1rem; /* Add some padding */
+    min-width: 200px; /* Minimum width */
 }
 
 .search-bar {
     width: 100%;
-    max-width: 600px;
+    max-width: 600px; /* Limit max width */
     padding: 0.8rem 1.5rem;
-    border-radius: 50px;
+    border-radius: 50px; /* Rounded corners */
     border: 1px solid #333;
     background-color: #252525;
     color: #f1f1f1;
@@ -93,32 +100,32 @@ a:hover {
 }
 
 .header-actions {
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevent actions area from shrinking */
 }
 
 
 /* ================== HERO CAROUSEL STYLES START ================== */
 .hero-swiper {
     width: 100%;
-    height: 65vh; /* Adjust as needed */
+    height: 65vh; /* Adjust height as needed */
     min-height: 400px;
     background-color: #181818; /* Fallback while loading */
 }
 
 .swiper-slide.hero-slide {
     position: relative;
-    background-size: cover; /* Crucial: Cover the slide area */
+    background-size: cover; /* Cover the slide area */
     background-position: center center; /* Center the image */
     background-repeat: no-repeat;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: center; /* Vertically center content */
+    justify-content: flex-start; /* Align content to the left */
     color: #fff;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    overflow: hidden;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Text shadow for readability */
+    overflow: hidden; /* Clip content */
 }
 
-/* Overlay within each slide */
+/* Gradient overlay on each slide for text contrast */
 .hero-slide .hero-overlay {
     position: absolute;
     top: 0;
@@ -126,22 +133,21 @@ a:hover {
     width: 100%;
     height: 100%;
     background: linear-gradient(to right, rgba(0,0,0,0.85) 25%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.1) 100%);
-    z-index: 1;
+    z-index: 1; /* Below content */
 }
 
-/* Content positioning within each slide */
+/* Content wrapper within slide */
 .hero-slide .hero-content {
-    position: relative;
+    position: relative; /* Position above overlay */
     z-index: 2;
-    /* Using container structure now */
-    margin-left: auto;
+    margin-left: auto; /* Uses container structure */
     margin-right: auto;
     width: 100%;
-    max-width: 1400px; /* Match main container */
+    max-width: 1400px; /* Match main container width */
     padding: 0 30px; /* Match main container padding */
 }
 
-/* Hero text styles within slide */
+/* Hero text styles */
 .hero-slide .hero-content h1 {
     font-size: 3.2rem;
     font-weight: 700;
@@ -154,6 +160,7 @@ a:hover {
     font-weight: 300;
     margin-bottom: 1.5rem;
     max-width: 60%; /* Limit width of plot text */
+    /* Text truncation for long plots */
     display: -webkit-box;
     -webkit-line-clamp: 3; /* Show max 3 lines */
     -webkit-box-orient: vertical;
@@ -165,26 +172,26 @@ a:hover {
 .hero-swiper .swiper-button-prev,
 .hero-swiper .swiper-button-next {
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    width: 44px;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+    border-radius: 50%; /* Circular buttons */
+    width: 44px; /* Fixed size */
     height: 44px;
     transition: background-color 0.3s ease;
-    --swiper-navigation-size: 22px; /* Control arrow size */
+    --swiper-navigation-size: 22px; /* Control arrow icon size */
 }
 .hero-swiper .swiper-button-prev:hover,
 .hero-swiper .swiper-button-next:hover {
-     background-color: rgba(0, 0, 0, 0.6);
+     background-color: rgba(0, 0, 0, 0.6); /* Darker on hover */
 }
-.hero-swiper .swiper-button-prev { left: 20px; }
+.hero-swiper .swiper-button-prev { left: 20px; } /* Position buttons */
 .hero-swiper .swiper-button-next { right: 20px; }
 
 /* Swiper Pagination Dots */
 .hero-swiper .swiper-pagination {
-    bottom: 20px !important; /* Position pagination lower */
+    bottom: 20px !important; /* Lower position */
 }
 .hero-swiper .swiper-pagination-bullet {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
     width: 10px;
     height: 10px;
     opacity: 0.8;
@@ -192,10 +199,9 @@ a:hover {
     margin: 0 5px !important; /* Space out bullets */
 }
 .hero-swiper .swiper-pagination-bullet-active {
-    background-color: #E50914;
+    background-color: #E50914; /* Brand color for active dot */
     opacity: 1;
 }
-
 /* ================== HERO CAROUSEL STYLES END ==================== */
 
 
@@ -203,14 +209,14 @@ a:hover {
 .mood-selector-section {
     background-color: #181818;
     padding: 1.5rem;
-    margin-top: -2rem; /* Pull mood selector up slightly */
+    margin-top: -2rem; /* Overlap hero slightly */
     margin-bottom: 3rem;
     border-radius: 8px;
     text-align: center;
     position: relative;
     z-index: 5; /* Ensure it's above hero */
     width: 90%; /* Limit width */
-    max-width: 600px; /* Max width */
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -219,7 +225,7 @@ a:hover {
      font-size: 1.4rem;
      font-weight: 600;
      margin-bottom: 1rem;
-     border-bottom: none;
+     border-bottom: none; /* Remove border from general h2 style */
      display: block;
 }
 
@@ -237,18 +243,18 @@ a:hover {
 }
 
 .mood-dropdown:focus {
-    border-color: #E50914;
+    border-color: #E50914; /* Highlight border on focus */
 }
 
 
 /* --- Main Content & Sections --- */
 main {
-    padding-top: 1rem; /* Reduced top padding */
+    padding-top: 1rem; /* Spacing below hero/mood */
     padding-bottom: 3rem;
 }
 
 .movie-section {
-    margin-bottom: 4rem;
+    margin-bottom: 4rem; /* Spacing between sections */
 }
 
 .movie-section h2 {
@@ -256,12 +262,13 @@ main {
     font-weight: 600;
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #E50914;
-    display: inline-block;
+    border-bottom: 2px solid #E50914; /* Brand color underline */
+    display: inline-block; /* Underline only spans text width */
 }
-.mood-selector-section h2 { /* Override */
+/* Override h2 style specifically for mood section */
+.mood-selector-section h2 {
     border-bottom: none;
-    display: block;
+    display: block; /* Center the heading */
     margin-bottom: 1rem;
 }
 
@@ -269,38 +276,39 @@ main {
 /* --- Movie Grid & Cards --- */
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Increased min size */
-    gap: 2rem;
+    /* Responsive grid: fills width with cards min 200px wide */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem; /* Spacing between cards */
 }
 
 .movie-card {
     background-color: #1f1f1f;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: hidden; /* Clip image corners */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack image and content */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    cursor: pointer; /* Indicate clickable */
 }
 
 .movie-card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px) scale(1.03); /* Lift and scale effect */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
 }
 
 .movie-card img {
     width: 100%;
-    aspect-ratio: 2 / 3; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the area, might crop */
-    border-bottom: 3px solid #E50914;
-    background-color: #333; /* Fallback */
+    aspect-ratio: 2 / 3; /* Maintain 2:3 aspect ratio */
+    object-fit: cover; /* Cover area, might crop */
+    border-bottom: 3px solid #E50914; /* Brand color accent */
 }
 
 .movie-card-content {
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex-grow: 1; /* Allow content to fill remaining space */
 }
 
 .movie-card h3 {
@@ -308,27 +316,28 @@ main {
     font-weight: 600;
     margin-bottom: 0.3rem;
     line-height: 1.3;
+    /* Truncate long titles */
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 2; /* Max 2 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-height: 2.6em; /* Reserve space */
+    min-height: 2.6em; /* Reserve space for 2 lines */
 }
 
-.movie-card p {
+.movie-card p { /* Year */
     font-size: 0.9rem;
     color: #aaa;
     margin-bottom: 0.5rem;
-    flex-grow: 1;
+    flex-grow: 1; /* Push rating down */
 }
 
 .movie-card .rating {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #46d369;
-    align-self: flex-start;
-    min-height: 1.2em;
+    color: #f5c518; /* IMDb yellow */
+    align-self: flex-start; /* Align to left */
+    min-height: 1.2em; /* Reserve space */
 }
 
 /* --- Loading & Error Indicators --- */
@@ -337,11 +346,13 @@ main {
     padding: 2rem;
     font-size: 1.1rem;
     color: #aaa;
+    /* Span across grid columns if inside a grid */
     grid-column: 1 / -1;
+    display: block; /* Ensure it's visible */
 }
 
 .error-indicator {
-    color: #E50914;
+    color: #E50914; /* Red for errors */
     font-weight: 600;
 }
 
@@ -376,41 +387,44 @@ main {
 
 /* ================== MODAL STYLES START ================== */
 .modal-overlay {
-    position: fixed;
+    position: fixed; /* Position relative to viewport */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.85); /* Darker overlay */
+    display: flex; /* Use flexbox for centering */
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000; /* High z-index */
+    /* Visibility handled by inline styles from JS */
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    transition: opacity 0.3s ease; /* Only transition opacity */
 }
 
-.modal-overlay.open {
-    opacity: 1;
-    visibility: visible;
-}
+/* --- REMOVED ---
+ * .modal-overlay.open {
+ *    // Visibility now controlled by JS inline styles
+ * }
+*/
 
 .modal-content {
     background-color: #1f1f1f;
     padding: 2rem;
     border-radius: 10px;
-    max-width: 900px;
-    width: 90%;
-    max-height: 90vh;
-    overflow-y: auto;
+    max-width: 900px; /* Max width of modal */
+    width: 90%; /* Responsive width */
+    max-height: 90vh; /* Max height relative to viewport */
+    overflow-y: auto; /* Enable scrolling if content overflows */
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transform: scale(0.95);
+    transform: scale(0.95); /* Initial state for scale transition */
     transition: transform 0.3s ease;
 }
 
-.modal-overlay.open .modal-content {
+/* Apply scale when modal overlay is visible (opacity 1) */
+.modal-overlay[style*="opacity: 1"] .modal-content {
      transform: scale(1);
 }
 
@@ -423,9 +437,10 @@ main {
     border: none;
     color: #aaa;
     font-size: 2.5rem;
-    line-height: 1;
+    line-height: 1; /* Ensure tight fit */
     cursor: pointer;
     transition: color 0.2s ease;
+    padding: 5px; /* Increase clickable area slightly */
 }
 
 .modal-close-btn:hover {
@@ -434,40 +449,40 @@ main {
 
 .modal-body {
     display: flex;
-    gap: 2rem;
+    gap: 2rem; /* Space between poster and info */
 }
 
 .modal-poster {
-    flex: 0 0 250px;
-    align-self: flex-start;
+    flex: 0 0 250px; /* Fixed width for poster area */
+    align-self: flex-start; /* Align poster to top */
 }
 
 .modal-poster img {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    background-color: #333;
+    /* Background color handled by general img style */
 }
 
 .modal-info {
-    flex: 1;
-    color: #e0e0e0;
+    flex: 1; /* Info area takes remaining space */
+    color: #e0e0e0; /* Light text color */
 }
 
 .modal-info h2 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: #fff;
+    color: #fff; /* White title */
 }
 
 .modal-meta {
     font-size: 0.9rem;
-    color: #aaa;
+    color: #aaa; /* Subdued color for meta */
     margin-bottom: 1rem;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0 10px;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 0 10px; /* Horizontal gap only */
 }
 .modal-meta span {
     display: inline-block;
@@ -483,18 +498,28 @@ main {
 .modal-info p strong {
     color: #aaa;
     margin-right: 5px;
+    font-weight: 600; /* Make labels slightly bolder */
+}
+/* Target the spans added in HTML for data */
+.modal-info p span {
+    color: #e0e0e0; /* Ensure data text is lighter */
 }
 
 .modal-plot {
-    margin-top: 1.5rem;
+    margin-top: 1.5rem; /* Add space above plot */
+}
+.modal-plot span {
+    display: block; /* Ensure plot text is block */
+    margin-top: 0.25rem;
 }
 
-/* *** DOWNLOAD BUTTON STYLE *** */
+
+/* Download Button Style */
 .btn.download-btn {
     display: inline-block;
     margin-top: 1.5rem;
     padding: 0.8rem 1.8rem;
-    background-color: #3ca2e0; /* Blue color for download */
+    background-color: #5ca5e0; /* Adjusted blue color */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -507,14 +532,16 @@ main {
 }
 
 .btn.download-btn:hover {
-    background-color: #328cc7;
+    background-color: #4a8cc7; /* Darker blue on hover */
     transform: scale(1.05);
 }
 
 /* Modal specific loading/error */
+/* Uses general .loading-indicator / .error-indicator styles */
 #modalLoading {
     font-style: italic;
     color: #ccc;
+    margin-top: 1rem;
 }
 
 #modalError {
@@ -526,106 +553,143 @@ main {
 
 /* ================== MODAL STYLES END ==================== */
 
-/* --- Responsiveness --- */
+/* ================== RESPONSIVENESS ================== */
 @media (max-width: 1200px) {
-    .container { padding: 0 20px; }
-    .movie-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem; }
+    .container { padding: 0 20px; } /* Reduce padding */
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Smaller min card size */
+        gap: 1.5rem;
+    }
      .hero-slide .hero-content { padding: 0 20px; }
 }
 
 @media (max-width: 900px) {
-     .header-container { flex-direction: column; align-items: center; gap: 1rem; }
-     .logo { margin-bottom: 0; }
-     .search-container { padding: 0; width: 90%; order: 3; }
-     .header-actions { order: 2; }
+     .header-container {
+         flex-direction: column; /* Stack header items */
+         align-items: center;
+         gap: 0.5rem; /* Reduce gap when stacked */
+     }
+     .logo { margin-bottom: 0.5rem; }
+     .search-container {
+         padding: 0;
+         width: 90%; /* Take most width */
+         order: 3; /* Put search at bottom */
+     }
+     .header-actions { order: 2; } /* Put actions in middle */
 }
 
 @media (max-width: 768px) {
+    /* Adjust Hero */
     .hero-swiper {
         height: 55vh;
         min-height: 350px;
     }
     .hero-slide .hero-content {
-        text-align: center;
+        text-align: center; /* Center text */
         max-width: 90%;
          padding: 0 15px;
+         /* Center content block */
          justify-content: center;
          align-items: center;
+         margin: 0 auto;
     }
      .hero-slide .hero-content p {
-        max-width: 90%;
+        max-width: 90%; /* Allow text to be wider */
+         font-size: 0.95rem; /* Slightly larger */
+         -webkit-line-clamp: 2; /* Reduce lines */
      }
     .hero-slide .hero-content h1 {
-        font-size: 2.0rem;
+        font-size: 2.2rem; /* Smaller title */
     }
-    .hero-slide .hero-content p {
-        font-size: 0.9rem;
-         -webkit-line-clamp: 2;
-    }
+    /* Hide Nav buttons on smaller screens */
     .hero-swiper .swiper-button-prev,
     .hero-swiper .swiper-button-next {
         display: none;
     }
+
+    /* Adjust Mood Selector */
     .mood-selector-section {
          margin-top: -1rem;
          width: 95%;
     }
-    .movie-section h2 { font-size: 1.6rem; }
-    .movie-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; }
+
+    /* Adjust Sections/Grid */
+    .movie-section h2 { font-size: 1.6rem; margin-bottom: 1.5rem;}
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Smaller cards */
+        gap: 1rem;
+    }
     .movie-card h3 { font-size: 1rem; min-height: 2.4em; }
-    main { padding-top: 1rem; }
+    main { padding-top: 1rem; } /* Less space */
 
      /* Modal Responsive */
      .modal-content {
-        width: 95%;
+        width: 95%; /* Almost full width */
         padding: 1.5rem;
-        max-height: 85vh;
+        max-height: 85vh; /* Reduce max height slightly */
     }
     .modal-body {
-        flex-direction: column;
+        flex-direction: column; /* Stack poster and info */
         gap: 1.5rem;
     }
     .modal-poster {
-        flex: 0 0 auto;
+        flex: 0 0 auto; /* Reset flex properties */
         width: 60%;
-        max-width: 200px;
-        margin: 0 auto;
+        max-width: 200px; /* Limit poster size */
+        margin: 0 auto; /* Center poster */
+    }
+    .modal-info {
+        text-align: center; /* Center text info */
     }
     .modal-info h2 {
         font-size: 1.6rem;
-        text-align: center;
     }
      .modal-meta {
-        justify-content: center;
+        justify-content: center; /* Center meta items */
         font-size: 0.85rem;
     }
     .modal-info p {
          font-size: 0.9rem;
     }
-    .btn.download-btn { /* Update selector */
-        width: 100%;
+    .modal-info p strong {
+         display: block; /* Stack labels above data */
+         margin-bottom: 0.1rem;
+         text-align: center;
+    }
+    .modal-info p span {
+         text-align: center;
+    }
+    .modal-plot span {
+         text-align: left; /* Keep plot left-aligned */
+    }
+
+    .btn.download-btn {
+        width: 100%; /* Full width button */
         text-align: center;
     }
 }
 
 @media (max-width: 480px) {
+    .container { padding: 0 15px; } /* Less padding */
     .hero-swiper { height: 50vh; min-height: 300px; }
     .hero-slide .hero-content h1 { font-size: 1.8rem; }
     .hero-slide .hero-content p { font-size: 0.85rem; }
-    .container { padding: 0 15px; }
-    .movie-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* Even smaller cards */
+         gap: 0.8rem; /* Tighter gap */
+    }
     .movie-card-content { padding: 0.8rem; }
     .movie-card h3 { font-size: 0.9rem; }
-    .search-container { width: 100%; padding: 0 10px;}
-    .mood-dropdown { min-width: auto; width: 90%; }
-     .mood-selector-section { padding: 1rem; }
-}
-/* ... (Keep all existing CSS above this line) ... */
+    .movie-card .rating { font-size: 0.85rem; }
 
-/* ================== MODAL OVERRIDE STYLES (for Debugging) ================== */
-/* Force the overlay to be visible when .open class is present */
-.modal-overlay.open {
-    opacity: 1 !important;
-    visibility: visible !important;
-    z-index: 9999 !important; /* Very high z-index */
+    .search-container { width: 100%; padding: 0 10px; }
+    .search-bar { padding: 0.6rem 1rem; font-size: 0.9rem; }
+
+    .mood-dropdown { min-width: auto; width: 90%; }
+    .mood-selector-section { padding: 1rem; }
+    .movie-section h2 { font-size: 1.4rem; }
+    .modal-info h2 { font-size: 1.4rem;}
 }
+
+/* ================== END RESPONSIVENESS ================== */
